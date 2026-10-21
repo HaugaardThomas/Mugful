@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}Mugful</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Shantell+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --paper: #ECE4D3; --card: rgba(255,252,244,.55); --ink: #3B2E26; --muted: #6E5E51; --line: #C9B99D; --moss: #536E45; }
+    @media (prefers-color-scheme: dark) {
+      :root { --paper: #2B241D; --card: rgba(255,240,214,.05); --ink: #EFE5D2; --muted: #BBAC96; --line: #56483A; --moss: #A2BD88; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; color: var(--ink); background: var(--paper) url("{{ '/assets/paper-grain.png' | relative_url }}");
+      font: 17px/1.6 "Shantell Sans", system-ui, sans-serif;
+    }
+    main { max-width: 680px; margin: 0 auto; padding: 40px 20px 64px; }
+    header a { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+    header img { width: 56px; height: 56px; }
+    header span { font: 700 40px/1 Gaegu, cursive; }
+    h1, h2, h3 { font-family: Gaegu, cursive; font-weight: 700; line-height: 1.1; }
+    h1 { font-size: 44px; margin: 32px 0 8px; }
+    h2 { font-size: 30px; margin: 36px 0 8px; }
+    h3 { font-size: 24px; margin: 24px 0 4px; }
+    a { color: var(--moss); text-underline-offset: 3px; }
+    .card { background: var(--card); border: 1.6px solid var(--ink); border-radius: 18px 14px 20px 16px; padding: 4px 20px; margin: 20px 0; }
+    .muted, footer { color: var(--muted); }
+    footer { border-top: 1.5px dashed var(--line); margin-top: 48px; padding-top: 16px; font-size: 15px; }
+    footer a { margin-right: 16px; }
+    ul { padding-left: 22px; }
+    ::selection { background: var(--moss); color: var(--paper); }
+  </style>
+</head>
+<body>
+  <main>
+    <header><a href="{{ '/' | relative_url }}"><img src="{{ '/assets/mugful.svg' | relative_url }}" alt=""><span>Mugful</span></a></header>
+    {{ content }}
+    <footer>
+      <a href="{{ '/' | relative_url }}">Home</a><a href="{{ '/privacy/' | relative_url }}">Privacy policy</a><a href="{{ '/support/' | relative_url }}">Support</a>
+    </footer>
+  </main>
+</body>
+</html>
