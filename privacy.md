@@ -6,7 +6,7 @@ permalink: /privacy/
 
 # Privacy policy
 
-<p class="muted">Effective 21 October 2026</p>
+<p class="muted">Effective 22 October 2026</p>
 
 Mugful is a caffeine and water tracker made by Thomas Haugaard, an independent developer. This policy explains what the app stores, where, and what you can do about it. The short version: **your data is yours, it isn't sold or shared, and there's no tracking.**
 
@@ -24,6 +24,10 @@ If you choose **Sign in with Apple** to back up and sync your data, we store:
 This is stored in a database run by our hosting provider, [Supabase](https://supabase.com/privacy), which processes it on our behalf. Only you can read your data: every row is locked to your account.
 
 We use this data **only** to back up your log and sync it between your devices.
+
+## Feedback (optional)
+
+If you send feedback from the app, we store your message, the type you picked (idea, problem, missing drink or something else), your email **only if you choose to add it**, the app version and that you're on iPhone. If you're signed in, the feedback is linked to your account. We use it only to read and answer your feedback and to improve Mugful. Feedback can't be read back through the app. To have it deleted, ask us (see Contact).
 
 ## What we don't do
 
