@@ -1,2 +1,8 @@
 title: Mugful
 description: Your coffee day, coloured in. A caffeine and water tracker for iPhone.
+kramdown:
+  # Gaegu has no curly quotes; keep the straight ones the pages are written with.
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+exclude:
+  - tools/
+  - DESIGN.md

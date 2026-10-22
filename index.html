@@ -1,0 +1,127 @@
+---
+layout: default
+description: A cozy, hand-drawn caffeine and water tracker for iPhone. Log your usual coffee in one tap and see how much caffeine is still in your system.
+---
+{% assign s = '/assets/screens/' | relative_url %}
+<section class="wrap hero" data-reveal>
+  <div>
+    <h1>Your coffee day, <span data-mark="hero">coloured in</span>.</h1>
+    <p class="lede">A cozy, hand-drawn caffeine and water tracker for iPhone. Log your usual coffee in one tap.</p>
+    <div class="actions">
+      <div class="soon" data-sketch="soon" data-radius="16">
+        <img src="{{ '/assets/app-icon-96.png' | relative_url }}" alt="" width="40" height="40">
+        <span><small>Coming soon to the</small><strong>App Store for iPhone</strong></span>
+      </div>
+      <a class="btn btn--primary" href="#tour" data-sketch="tour" data-radius="16">
+        Take the tour
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path class="i-line" d="M12 4.6C12.2 9 11.8 14 12.1 19"/><path class="i-line" d="M6.4 13.6C8.4 15.4 10.3 17.3 12.1 19.2C13.9 17.2 15.8 15.3 17.7 13.5"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stage">
+    <figure class="phone" data-sketch="phone-today" data-radius="46" data-stroke="2.4">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="{{ s }}today-dark-440.webp 440w, {{ s }}today-dark-880.webp 880w" sizes="316px">
+        <img src="{{ s }}today-880.webp" srcset="{{ s }}today-440.webp 440w, {{ s }}today-880.webp 880w" sizes="316px" width="880" height="1912" fetchpriority="high" alt="The Today screen: 126 of 400 mg caffeine, 962 of 2500 ml water, 97 mg caffeine still in your system, a last call for caffeine at 1:11 PM, and saved drinks you can log with one tap.">
+      </picture>
+    </figure>
+    <div class="note note--usual" aria-hidden="true">
+      your usual, one tap
+      <svg viewBox="0 0 92 46"><path d="M4 8C30 2 62 6 84 34"/><path d="M70 32L85 35L83 20"/></svg>
+    </div>
+    <div class="note note--system" aria-hidden="true">
+      still in you
+      <svg viewBox="0 0 76 40"><path d="M72 8C50 2 22 10 6 30"/><path d="M6 16L5 31L19 30"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section recipe" id="tour" data-reveal>
+  <div class="recipe-stage">
+    <figure class="phone phone--back" data-sketch="phone-add" data-radius="42" data-stroke="2.2">
+      <img src="{{ s }}add-880.webp" srcset="{{ s }}add-440.webp 440w, {{ s }}add-880.webp 880w" sizes="268px" width="880" height="1912" loading="lazy" alt="Add coffee: search the catalogue, your saved drinks, recent drinks and every drink, including Starbucks.">
+    </figure>
+    <figure class="phone phone--front" data-sketch="phone-customise" data-radius="42" data-stroke="2.2">
+      <img src="{{ s }}customise-880.webp" srcset="{{ s }}customise-440.webp 440w, {{ s }}customise-880.webp 880w" sizes="268px" width="880" height="1912" loading="lazy" alt="Customising a flat white: two espresso shots, oat drink, 120 ml of milk, and the totals at the top.">
+    </figure>
+  </div>
+  <div>
+    <h2 data-scribble>Built from what's in the cup</h2>
+    <p class="body">Every drink is a recipe of shots, milk, size and extras. Swap the milk or add a shot and Mugful works it all out again.</p>
+    <div class="nutrition" data-sketch="nutrition" data-radius="18">
+      <div><b class="c-caffeine">126<small>mg</small></b><span>Caffeine</span></div>
+      <div><b class="c-kcal">77<small>kcal</small></b><span>Calories</span></div>
+      <div><b class="c-water">162<small>ml</small></b><span>Water</span></div>
+      <div><b class="c-sugar">4.1<small>g</small></b><span>Sugar</span></div>
+    </div>
+    <p class="nutrition-cap">A flat white with two shots and 120 ml of oat drink.</p>
+  </div>
+</section>
+
+<section class="wrap section" data-reveal>
+  <div class="sheet" data-sketch="halflife" data-radius="28">
+    <div class="sheet-head">
+      <h2 data-scribble>Know when to stop for the day</h2>
+      <p class="body">Mugful estimates the caffeine still in your system from your own half-life, and gives you a last call so coffee doesn’t cost you sleep.</p>
+    </div>
+    <figure class="chart-figure">
+      {% include halflife-chart.svg %}
+      <figcaption>
+        <span id="chart-title">One 126 mg flat white at 7:40 AM, with a 5 hour half-life and bedtime at 11 PM.</span>
+        <span id="chart-desc">The last call is based on a 2023 review of 24 sleep studies. Numbers are estimates, not medical advice.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap section week" data-reveal>
+  <h2 data-scribble>Your week, in pencil</h2>
+  <p class="body">Seven days of caffeine against your limit, and every coffee and glass of water you logged.</p>
+  <div class="week-stage">
+    <figure class="phone" data-sketch="phone-history" data-radius="46" data-stroke="2.4">
+      <img src="{{ s }}history-880.webp" srcset="{{ s }}history-440.webp 440w, {{ s }}history-880.webp 880w" sizes="320px" width="880" height="1912" loading="lazy" alt="History: a hatched bar chart of caffeine for the last seven days against a 400 mg limit, then today’s and yesterday’s drinks and water.">
+    </figure>
+    <div class="note note--bars" aria-hidden="true">
+      shaded in by hand
+      <svg viewBox="0 0 96 50"><path d="M4 10C36 2 70 10 90 38"/><path d="M76 37L91 39L88 24"/></svg>
+    </div>
+    <div class="note note--limit" aria-hidden="true">
+      your daily limit
+      <svg viewBox="0 0 92 40"><path d="M88 10C60 2 26 8 6 30"/><path d="M6 16L5 31L19 31"/></svg>
+    </div>
+    <div class="note note--log" aria-hidden="true">
+      water counts too
+      <svg viewBox="0 0 80 36"><path d="M76 12C54 6 26 14 6 24"/><path d="M14 14L5 24L17 30"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section promises" data-reveal>
+  <div class="pinned" data-sketch="promises" data-radius="22">
+    <h2 data-scribble>Cozy, never nagging</h2>
+    <ul class="checks">
+      {% assign check = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path class="i-line" d="M5 12.6C6.7 14 8.3 15.8 9.7 17.7C12.3 12.8 15.4 8.9 19.2 5.7"/></svg>' %}
+      <li>{{ check }}<span>Works offline, with no account needed.</span></li>
+      <li>{{ check }}<span>Sign in with Apple only if you want a backup and sync.</span></li>
+      <li>{{ check }}<span>No ads, no analytics, no tracking.</span></li>
+      <li>{{ check }}<span>Your limit informs you. It never scolds.</span></li>
+      <li>{{ check }}<span>Honest estimates from real recipes, not medical advice.</span></li>
+    </ul>
+  </div>
+  <div class="lamplight">
+    <figure class="phone" data-sketch="phone-lamplight" data-radius="44" data-stroke="2.3">
+      <img src="{{ s }}today-dark-880.webp" srcset="{{ s }}today-dark-440.webp 440w, {{ s }}today-dark-880.webp 880w" sizes="290px" width="880" height="1912" loading="lazy" alt="The Today screen in dark mode, drawn on dark kraft paper.">
+    </figure>
+    <p>And after dark, a sketchbook by lamplight.</p>
+  </div>
+</section>
+
+<section class="wrap closing" data-reveal>
+  {% include symbol.svg %}
+  <h2>Coming soon to iPhone</h2>
+  <p class="body">Questions, a missing drink or an idea? There’s a page for that.</p>
+  <div class="actions">
+    <a class="btn" href="{{ '/support/' | relative_url }}" data-sketch="support" data-radius="16">Visit support</a>
+  </div>
+</section>
